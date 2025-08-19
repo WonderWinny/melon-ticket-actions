@@ -1,0 +1,17 @@
+name: 檢查IU門票
+
+on:
+  schedule:
+    - cron: '*/5 * * * *'  # 每5分鐘執行一次
+
+jobs:
+  melonticket-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 檢查門票
+        uses: mooyoul/melon-ticket-actions@v1
+        with:
+          product-id: '211740'                  # IU 2025 Bye Summer 演出場次ID
+          schedule-id: '2'                     # 場次ID；2 對應 2025-09-14（日）場次
+          seat-id: ''                          # 座位ID留空表示不限座位
+          slack-incoming-webhook-url: ${{ secrets.DISCORD_WEBHOOK }}  # 使用用户提供的 Discord Webhook
