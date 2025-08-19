@@ -9,7 +9,7 @@ jobs:
   check-ticket:
     runs-on: ubuntu-latest
     steps:
-      - uses: mooyoul/melon-ticket-actions@c0mmitSHA
+      - uses: mooyoul/melon-ticket-actions@v1.1.5
         with:
           product-id: '211740'                  # IU 2025 Bye Summer 演出產品ID
           schedule-id: '2'                      # 9/14 場次
